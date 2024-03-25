@@ -135,11 +135,11 @@ public:
    //
    size_t size() const 
    { 
-      return (size_t)99;
+      return numElements;
    }
    bool empty() const 
    { 
-      return false; 
+      return size() == 0; 
    }
    size_t bucket_count() const 
    { 
