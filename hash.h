@@ -45,21 +45,27 @@ public:
    //
    // Construct
    //
-   unordered_set()
+   unordered_set() : buckets(8), numElements(0), maxLoadFactor(1)
    {
    }
-   unordered_set(size_t numBuckets)
+   unordered_set(size_t numBuckets) : buckets(numBuckets), numElements(0), maxLoadFactor(1)
    {
    }
    unordered_set(const unordered_set&  rhs) 
    {
+      *this = rhs;
    }
    unordered_set(unordered_set&& rhs) 
    {
+      *this = std::move(rhs);
    }
    template <class Iterator>
    unordered_set(Iterator first, Iterator last)
    {
+      while (first != last)
+      {
+         insert(*first++);
+      }
    }
 
    //
@@ -67,10 +73,26 @@ public:
    //
    unordered_set& operator=(const unordered_set& rhs)
    {
+      buckets = rhs.buckets;
+      numElements = (int)rhs.size();
+      maxLoadFactor = rhs.max_load_factor();
+      
+      
       return *this;
    }
    unordered_set& operator=(unordered_set&& rhs)
    {
+      if (!rhs.buckets.empty())
+         buckets = rhs.buckets;
+      else
+         buckets = std::move(rhs.buckets);
+      
+      numElements = (int)rhs.size();
+      maxLoadFactor = rhs.max_load_factor();
+      
+      rhs.numElements = 0;
+      rhs.maxLoadFactor = 1.0;
+      
       return *this;
    }
    unordered_set& operator=(const std::initializer_list<T>& il)
@@ -79,6 +101,7 @@ public:
    }
    void swap(unordered_set& rhs)
    {
+      std::swap(*this, rhs);
    }
 
    // 
@@ -88,11 +111,16 @@ public:
    class local_iterator;
    iterator begin()
    {
-      return iterator();
+      for (auto itBucket = buckets.begin(); itBucket != buckets.end(); itBucket++)
+      {
+         if (!buckets.empty())
+            return iterator(buckets.end(), itBucket, (*itBucket).begin());
+      }
+      return end();
    }
    iterator end()
    {
-      return iterator();
+      return iterator(buckets.end(), buckets.end(), buckets[0].end());
    }
    local_iterator begin(size_t iBucket)
    {
@@ -139,26 +167,27 @@ public:
    }
    bool empty() const 
    { 
-      return size() == 0; 
+      return size() == 0;
    }
    size_t bucket_count() const 
    { 
-      return (size_t)99;
+      return buckets.size();
    }
    size_t bucket_size(size_t i) const
    {
-      return (size_t)99;
+      return buckets[i].size();
    }
    float load_factor() const noexcept 
    { 
-      return (float)99.0; 
+      return (float)(size()/bucket_count());
    }
    float max_load_factor() const noexcept 
    { 
-      return (float)99.0; 
+      return maxLoadFactor; 
    }
    void  max_load_factor(float m)
    {
+      maxLoadFactor = m;
    }
 
 private:
@@ -194,6 +223,9 @@ public:
             const typename custom::vector<custom::list<T> >::iterator& itVector,
             const typename custom::list<T>::iterator &itList)
    {
+      this->itVectorEnd = itVectorEnd;
+      this->itVector = itVector;
+      this->itList = itList;
    }
    iterator(const iterator& rhs) 
    { 
@@ -374,6 +406,7 @@ typename unordered_set <T, H, E, A> ::iterator & unordered_set<T, H, E, A>::iter
 template <typename T, typename H, typename E, typename A>
 void swap(unordered_set<T,H,E,A>& lhs, unordered_set<T,H,E,A>& rhs)
 {
+   std::swap(lhs, rhs);
 }
 
 }

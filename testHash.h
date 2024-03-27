@@ -42,29 +42,29 @@ public:
    {
       reset();
 
-//      // Construct
-//      test_construct_default();
-//      test_construct_nonDefault11();
+      // Construct
+      test_construct_default();
+      test_construct_nonDefault11();
 //      test_construct_nonDefaultIterator();
-//      test_construct_copyEmpty();
-//      test_construct_copyStandard();
-//      test_construct_nonDefaultHash();
-//
-//      // Assign
-//      test_assign_emptyEmpty();
-//      test_assign_emptyStandard();
-//      test_assign_standardEmpty();
-//      test_assignMove_emptyEmpty();
-//      test_assignMove_emptyStandard();
+      test_construct_copyEmpty();
+      test_construct_copyStandard();
+      test_construct_nonDefaultHash();
+
+      // Assign
+      test_assign_emptyEmpty();
+      test_assign_emptyStandard();
+      test_assign_standardEmpty();
+      test_assignMove_emptyEmpty();
+      test_assignMove_emptyStandard();
 //      test_assignMove_standardEmpty();
-//      test_swapMember_emptyEmpty();
+      test_swapMember_emptyEmpty();
 //      test_swapMember_standardEmpty();
 //      test_swapMember_standardOther();
-//      test_swapNonMember_emptyEmpty();
+      test_swapNonMember_emptyEmpty();
 //      test_swapNonMember_standardEmpty();
 //      test_swapNonMember_standardOther();
-//
-//      // Iterator
+
+      // Iterator
 //      test_iterator_begin_empty();
 //      test_iterator_begin_standard();
 //      test_iterator_end_empty();
@@ -79,8 +79,8 @@ public:
 //      test_localIterator_begin_empty();
 //      test_localIterator_increment_single();
 //      test_localIterator_increment_multiple();
-//
-//      // Access
+
+      // Access
 //      test_bucket_empty0();
 //      test_bucket_empty7();
 //      test_bucket_empty58();
@@ -94,8 +94,8 @@ public:
 //      test_find_standardBack();
 //      test_find_standardMissingEmptyList();
 //      test_find_standardMissingFilledList();
-//
-//      // Insert
+
+      // Insert
 //      test_rehash_emptySmaller();
 //      test_rehash_emptyBigger();
 //      test_rehash_standard6();
@@ -110,8 +110,8 @@ public:
 //      test_insert_standard44();
 //      test_insert_standardDuplicate();
 //      test_insert_standardRehash();
-//
-//      // Remove
+
+      // Remove
 //      test_clear_empty();
 //      test_clear_standard();
 //      test_erase_empty();
@@ -120,23 +120,23 @@ public:
 //      test_erase_standardFront();
 //      test_erase_standardBack();
 //      test_erase_standardLast();
-//
-//      // Status
-//      test_size_empty();
-//      test_size_standard();
-//      test_empty_empty();
-//      test_empty_standard();
-//      test_bucketSize_empty();
-//      test_bucketSize_standardEmpty();
-//      test_bucketSize_standardOne();
-//      test_bucketSize_standardTwo();
-//      test_bucketCount_empty();
-//      test_bucketCount_standard();
-//      test_loadFactor_empty();
-//      test_loadFactor_standard();
-//      test_loadFactor_default();
-//      test_loadFactor_two();
-//      test_setLoadFactor_five();
+
+      // Status
+      test_size_empty();
+      test_size_standard();
+      test_empty_empty();
+      test_empty_standard();
+      test_bucketSize_empty();
+      test_bucketSize_standardEmpty();
+      test_bucketSize_standardOne();
+      test_bucketSize_standardTwo();
+      test_bucketCount_empty();
+      test_bucketCount_standard();
+      test_loadFactor_empty();
+      test_loadFactor_standard();
+      test_loadFactor_default();
+      test_loadFactor_two();
+      test_setLoadFactor_five();
       
       report("Hash");
    }
@@ -695,6 +695,7 @@ public:
       size_t size = us.size();
       // verify
       assertUnit(0 == size);
+
       assertUnit(Spy::numAssign() == 0);
       assertUnit(Spy::numAlloc() == 0);
       assertUnit(Spy::numDelete() == 0);
