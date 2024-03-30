@@ -156,6 +156,9 @@ public:
    //
    void clear() noexcept
    {
+      for (auto &bucket : buckets)
+         bucket.clear();
+      numElements = 0;
    }
    iterator erase(const T& t);
 
@@ -278,8 +281,8 @@ public:
    iterator& operator ++ ();
    iterator operator ++ (int postfix)
    {
-      auto temp = this;
-      ++this;
+      iterator temp(*this);
+      ++(*this);
       return temp;
    }
 
@@ -379,7 +382,24 @@ private:
 template <typename T, typename Hash, typename E, typename A>
 typename unordered_set <T, Hash, E, A> ::iterator unordered_set<T,Hash,E,A>::erase(const T& t)
 {
-   return iterator();
+   // Find element to be erased. Return end() if the element is not present.
+   iterator itErase = find(t);
+   if (itErase == end())
+      return itErase;
+   
+   // Determine the return value.
+   iterator itReturn = itErase;
+   itReturn++;
+   
+   // Erase the element from the bucket.
+   buckets[bucket(t)].erase(itErase.itList);
+
+   
+   numElements--;
+   
+   // Return iterator to the next element.
+   return itReturn;
+
 }
 
 /*****************************************
@@ -416,15 +436,21 @@ typename unordered_set <T, H, E, A> ::iterator unordered_set<T, H, E, A>::find(c
    // Get the index of the bucket where 't' will be in
    auto iBucket = bucket(t);
    
-   // Get a list iterator to the element using the list's find() method
-//   auto value = buckets[iBucket].find(t);
-//   auto itList = (*buckets[iBucket]).find(t);
-   
-   // Create an iterator to return
-//   if (itList != buckets[iBucket].end())
-      std::cout<< "hi"<< std::endl;
-//      return iterator(buckets.end(), local_iterator(buckets, iBucket), itList);
-//   else
+   // Get an iterator until we find the right bucket
+   for (auto itBucket = buckets.begin(); itBucket != buckets.end(); ++itBucket)
+   {
+      if ((*itBucket).begin() == buckets[iBucket].begin())
+      {
+         // Get a list iterator to the element iterating through it
+         for (auto itList = buckets[iBucket].begin(); itList != buckets[iBucket].end(); ++itList)
+         {
+            if (*itList == t)
+            {
+               return iterator(buckets.end(),itBucket, itList);
+            }
+         }
+      }
+   }
    return end();
 }
 

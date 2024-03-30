@@ -90,10 +90,10 @@ public:
       test_bucket_custom0();
       test_bucket_custom3();
       test_find_empty();
-//      test_find_standardFront();
-//      test_find_standardBack();
-//      test_find_standardMissingEmptyList();
-//      test_find_standardMissingFilledList();
+      test_find_standardFront();
+      test_find_standardBack();
+      test_find_standardMissingEmptyList();
+      test_find_standardMissingFilledList();
 
       // Insert
 //      test_rehash_emptySmaller();
@@ -112,14 +112,14 @@ public:
 //      test_insert_standardRehash();
 
       // Remove
-//      test_clear_empty();
-//      test_clear_standard();
-//      test_erase_empty();
-//      test_erase_standardMissing();
-//      test_erase_standardAlone();
-//      test_erase_standardFront();
-//      test_erase_standardBack();
-//      test_erase_standardLast();
+      test_clear_empty();
+      test_clear_standard();
+      test_erase_empty();
+      test_erase_standardMissing();
+      test_erase_standardAlone();
+      test_erase_standardFront();
+      test_erase_standardBack();
+      test_erase_standardLast();
 
       // Status
       test_size_empty();
