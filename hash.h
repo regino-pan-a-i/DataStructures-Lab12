@@ -426,24 +426,27 @@ custom::pair<typename custom::unordered_set<T, H, E, A>::iterator, bool> unorder
 {
    // Find the bucket where the new element is to reside.
    size_t iBucket = bucket(t);
+
    // See if the element is already there. If so, then return out.
-   for (auto it = buckets[iBucket].begin(); it != buckets[iBucket].end(); ++it)
-      if (*it == t)
-//         return custom::pair<custom::unordered_set<T, H, E, A>::iterator, bool>(iterator(end(), find(t), it), false);
+   for (typename custom::list<T>::iterator it = buckets[iBucket].begin(); it != buckets[iBucket].end(); ++it)
+       if (*it == t)
+           return custom::pair<custom::unordered_set<T, H, E, A>::iterator, bool>(find(t), false);
+
    // Reserve more space if we are already at the limit.
    if (min_buckets_required(numElements + 1) > bucket_count())
    {
-      reserve(numElements * 2);
-      iBucket = bucket(t);
+       reserve(numElements * 2);
+       iBucket = bucket(t);
    }
-   // Actually insert the new element on the back of the bucket. 
+
+   // Actually insert the new element on the back of the bucket.
    buckets[iBucket].push_back(t);
-   numElements++;
-   
-   auto itInserted = find(t);
+   ++numElements; // Increment the count of elements
+
+   iterator itInserted = find(t);
+
    // Return the results.
-//   return custom::pair<custom::unordered_set<T, H, E, A>::iterator, bool>(iterator(buckets.end(), itInserted, itInserted.itList ), true);
-   return custom::pair<custom::unordered_set<T, H, E, A>::iterator, bool>(iterator(), true);
+   return custom::pair<custom::unordered_set<T, H, E, A>::iterator, bool>(itInserted, true);
 }
 template <typename T, typename H, typename E, typename A>
 void unordered_set<T, H, E, A>::insert(const std::initializer_list<T> & il)

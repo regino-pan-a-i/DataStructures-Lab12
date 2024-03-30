@@ -62,7 +62,7 @@ public:
 //      test_swapMember_standardOther();
       test_swapNonMember_emptyEmpty();
 //      test_swapNonMember_standardEmpty();
-//      test_swapNonMember_standardOther();
+      test_swapNonMember_standardOther();
 
       // Iterator
       test_iterator_begin_empty();
@@ -104,12 +104,12 @@ public:
       test_reserve_empty12();
       test_reserve_standard6();
       test_reserve_standard8();
-//      test_insert_empty0();
-//      test_insert_empty58();
+      test_insert_empty0();
+      test_insert_empty58();
 //      test_insert_standard3();
 //      test_insert_standard44();
-//      test_insert_standardDuplicate();
-//      test_insert_standardRehash();
+      test_insert_standardDuplicate();
+      test_insert_standardRehash();
 
       // Remove
       test_clear_empty();
