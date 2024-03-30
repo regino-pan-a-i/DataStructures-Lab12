@@ -96,14 +96,14 @@ public:
       test_find_standardMissingFilledList();
 
       // Insert
-//      test_rehash_emptySmaller();
-//      test_rehash_emptyBigger();
-//      test_rehash_standard6();
-//      test_rehash_standard8();
-//      test_reserve_empty10();
-//      test_reserve_empty12();
-//      test_reserve_standard6();
-//      test_reserve_standard8();
+      test_rehash_emptySmaller();
+      test_rehash_emptyBigger();
+      test_rehash_standard6();
+      test_rehash_standard8();
+      test_reserve_empty10();
+      test_reserve_empty12();
+      test_reserve_standard6();
+      test_reserve_standard8();
 //      test_insert_empty0();
 //      test_insert_empty58();
 //      test_insert_standard3();
