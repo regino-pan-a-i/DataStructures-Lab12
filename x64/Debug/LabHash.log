@@ -1,0 +1,66 @@
+﻿  testHash.cpp
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(136,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<T,A>::Node *' of greater size
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(136,17): warning C4312:         with
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(136,17): warning C4312:         [
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(136,17): warning C4312:             T=Spy,
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(136,17): warning C4312:             A=std::allocator<Spy>
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(136,17): warning C4312:         ]
+  (compiling source file 'testHash.cpp')
+  
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(137,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<T,A>::Node *' of greater size
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(137,17): warning C4312:         with
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(137,17): warning C4312:         [
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(137,17): warning C4312:             T=Spy,
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(137,17): warning C4312:             A=std::allocator<Spy>
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(137,17): warning C4312:         ]
+  (compiling source file 'testHash.cpp')
+  
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(157,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<T,A>::Node *' of greater size
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(157,17): warning C4312:         with
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(157,17): warning C4312:         [
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(157,17): warning C4312:             T=Spy,
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(157,17): warning C4312:             A=std::allocator<Spy>
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(157,17): warning C4312:         ]
+  (compiling source file 'testHash.cpp')
+  
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(158,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<T,A>::Node *' of greater size
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(158,17): warning C4312:         with
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(158,17): warning C4312:         [
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(158,17): warning C4312:             T=Spy,
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(158,17): warning C4312:             A=std::allocator<Spy>
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(158,17): warning C4312:         ]
+  (compiling source file 'testHash.cpp')
+  
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(178,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<T,A>::Node *' of greater size
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(178,17): warning C4312:         with
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(178,17): warning C4312:         [
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(178,17): warning C4312:             T=Spy,
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(178,17): warning C4312:             A=std::allocator<Spy>
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(178,17): warning C4312:         ]
+  (compiling source file 'testHash.cpp')
+  
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(179,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<T,A>::Node *' of greater size
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(179,17): warning C4312:         with
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(179,17): warning C4312:         [
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(179,17): warning C4312:             T=Spy,
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(179,17): warning C4312:             A=std::allocator<Spy>
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(179,17): warning C4312:         ]
+  (compiling source file 'testHash.cpp')
+  
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(224,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<T,A>::Node *' of greater size
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(224,17): warning C4312:         with
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(224,17): warning C4312:         [
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(224,17): warning C4312:             T=Spy,
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(224,17): warning C4312:             A=std::allocator<Spy>
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(224,17): warning C4312:         ]
+  (compiling source file 'testHash.cpp')
+  
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(225,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<T,A>::Node *' of greater size
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(225,17): warning C4312:         with
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(225,17): warning C4312:         [
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(225,17): warning C4312:             T=Spy,
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(225,17): warning C4312:             A=std::allocator<Spy>
+C:\Users\marco\Desktop\DataStructures-Lab12\testList.h(225,17): warning C4312:         ]
+  (compiling source file 'testHash.cpp')
+  
+  LabHash.vcxproj -> C:\Users\marco\Desktop\DataStructures-Lab12\x64\Debug\LabHash.exe

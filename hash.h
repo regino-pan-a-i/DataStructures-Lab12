@@ -55,7 +55,7 @@ public:
    {
       *this = rhs;
    }
-   unordered_set(unordered_set&& rhs) 
+   unordered_set(unordered_set&& rhs) noexcept
    {
       *this = std::move(rhs);
    }
@@ -80,7 +80,7 @@ public:
       
       return *this;
    }
-   unordered_set& operator=(unordered_set&& rhs)
+   unordered_set& operator=(unordered_set&& rhs) noexcept
    {
       if (!rhs.buckets.empty())
          buckets = rhs.buckets;
